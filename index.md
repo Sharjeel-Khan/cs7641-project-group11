@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+# Career Optimization Utilizing Census Data
 
-You can use the [editor on GitHub](https://github.com/Sharjeel-Khan/cs7641-project-group11/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Introduction
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Data
 
-### Markdown
+## Unsupervised Learning
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+## Supervised Learning
 
-- Bulleted
-- List
+### SVM
 
-1. Numbered
-2. List
+### Decision Tree
 
-**Bold** and _Italic_ and `Code` text
+### Random Forest
 
-[Link](url) and ![Image](src)
-```
+### Linear Regression
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Results
 
-### Jekyll Themes
+## Conclusion
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Sharjeel-Khan/cs7641-project-group11/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Distribution of Work
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## References
