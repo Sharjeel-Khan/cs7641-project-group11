@@ -8,13 +8,25 @@ Massive census datasets can reveal interesting aspects of the human condition an
 
 ### Description
 
-Our source, as mentioned above, is the UCI Machine Learning Repository's Census Income Data Set. There are a total of 48,842 datapoints, with 14 continuous and categorical attributes associated with each datapoint:
+Our source, as mentioned above, is the UCI Machine Learning Repository's Census Income Data Set. There are a total of 48,842 datapoints, with 15 continuous and categorical features associated with each datapoint:
 
 1. age
 2. workclass
 3. fnlgwt
 4. education
 5. education-num
+6. marital-status
+7. occupation
+8. relationship
+9. race
+10. sex
+11. capital-gain
+12. capital-loss
+13. hours-per-week
+14. native-country
+15. income (whether the individual made $\leq 50$k or $>50$k)
+
+The original purpose of this dataset was to predict the 15th feature, which is listed as part of our dataset for our project.
 
 ### Data Visualization
 
