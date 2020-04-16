@@ -24,7 +24,7 @@ Our source, as mentioned above, is the UCI Machine Learning Repository's Census 
 12. capital-loss
 13. hours-per-week
 14. native-country
-15. income (whether the individual made $\leq 50$k or $>50$k)
+15. income (whether the individual made <=50k or >50k)
 
 The original purpose of this dataset was to predict the 15th feature, which is listed as part of our dataset for our project.
 
