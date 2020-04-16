@@ -49,6 +49,8 @@ Categorical data to continuous (ish)
 
 Talk abour DBSCAN
 
+[Here is an elbow plot we used to determine Eps for DBSCAN](/plots/elbow_plot.png "Elbow method to find Eps")
+
 ### GMM
 
 Talk about GMM
