@@ -65,7 +65,7 @@ First, after we pre-process our data with the exception of one-hot encoding (to 
 
 ![Elbow plot to determine Eps for DBSCAN.](/plots/dbscan_elbow.png)
 
-With this graphical method, we identified Eps = 1.571. With these two parameters, we are able to group our datapoints into two clusters and identify 44 noisy datapoints that we then delete from the dataset.
+With this graphical method, we identified Eps = 1.571. With these two parameters, we are able to group our datapoints into two clusters and identify 44 noisy datapoints (labeled as -1 by the scikit-learn DBSCAN function) that we then delete from the dataset.
 
 ![Density Plot.](/plots/dbscan_results.png)
 
