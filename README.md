@@ -35,13 +35,27 @@ The original purpose of this dataset was to predict the 15th feature, which is l
 
 We decided to drop the fnlgwt feature, as it was irrelevant to this analysis.
 
-#### Standardization
-
-We standaridize the data.
-
 #### One-Hot Encoding
 
-Categorical data to continuous (ish)
+The dataset is comprised of both numerical and categorical data. For a few classifiers, it is hard to use categorical data so we perform one-hot encoding. One-Hot encoding converts every categorical feature into new feature comprised of the values giving each new feature either 0 or 1. 
+
+For example, the workclass feature has seven values: 'Federal-gov', 'Local-gov', 'Never-worked', 'Private', 'Self-emp-inc', 'Self-emp-not-inc', 'State-gov', and 'Without-pay'. After One-Hot encoding, the workclass feature gets removed and gets replaced by 'workclass_Federal-gov', 'workclass_Local-gov', 'workclass_Never-worked', 'workclass_Private', 'workclass_Self-emp-inc', 'workclass_Self-emp-not-inc', 'workclass_State-gov', and 'workclass_Without-pay' features. 
+
+"workclass":"State-gov" means
+'workclass_Federal-gov':0
+'workclass_Local-gov':0
+'workclass_Never-worked':0
+'workclass_Private':0 
+'workclass_Self-emp-inc':0
+'workclass_Self-emp-not-inc':0 
+'workclass_State-gov':1 
+'workclass_Without-pay':0 
+
+#### Standardization
+
+We used standardized the dataset by using scikit-learn's StandardScaler basically normalizing then scaling every datapoint
+by the standard deviation.
+
 
 ## Unsupervised Learning
 
