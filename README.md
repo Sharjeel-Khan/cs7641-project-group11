@@ -47,9 +47,11 @@ Categorical data to continuous (ish)
 
 ### DBSCAN
 
-Talk abour DBSCAN
+First, after we pre-process our data with the exception of one-hot encoding (to avoid mixing categorical and continuous features together), we run DBSCAN on the data to identify and remove outliers. We use MinPts = 20. To find Eps, we use the elbow method where we plotted the 20th-nearest-neighbor distance for each datapoint. 
 
-![Here is an elbow plot we used to determine Eps for DBSCAN](/plots/dbscan_elbow.png)
+![Shown here is the elbow plot we used to determine Eps for DBSCAN.](/plots/dbscan_elbow.png)
+
+With this graphical method, we identified Eps = 1.571. With these two parameters, 
 
 ### GMM
 
