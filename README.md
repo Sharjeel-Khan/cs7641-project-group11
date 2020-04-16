@@ -67,6 +67,13 @@ Talk about GMM
 
 ### Linear Regression
 
+Regression is used to estimate the relationship between the training variables and the outcome. It can also be used for predicting the value based on the training set. We decided to use Linear Regression to figure out if we can build a linear function to help predict the different features. Due to the overfitting problem of Linear Regression, we also try Ridge and Lasso Regression to regularize the linear function so it does not overfit the training data.
+For regression, there are three hyperparameters: polynomial degree, alpha, and maximum iterations. A normal linear function is a line and the line was not accomodating all the data points so the polynomial degree converts the PCA components into higher degree functions. As for the other hyperparameters, Ridge and Lasso regression trains use coordinate descent and the hyperparameters define how long to train the regression model . From the graphs below, we figured out that the dataset works perfectly for polynomial degree = 4, alpha=0.1, and max-iterations=2000.
+
+![HyperParameter Tuning for Polynomial Degree.](/plots/Linear_HyperParameter_Polynomial Degree.png )
+![HyperParameter Tuning for Alpha.](/plots/Linear_HyperParameter_Alpha.png)
+![HyperParameter Tuning for Max_iterations.](/plots/Linear_HyperParameter_Max_iterations.png)
+
 ## Results
 
 ## Conclusion
