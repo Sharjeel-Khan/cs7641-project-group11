@@ -86,7 +86,30 @@ A grid search method was used in order to choose appropriate parameters for the 
 
 ### Decision Tree
 
+
+
 ### Random Forest
+Random Forests are an extension of Decision Trees. Decision trees will not make mistakes with their training data and may overfit (assuming unlimited depth). The model will not only learn the training set but also the noise of the system itself. With unlimited depth, ther is unlimited flexibility so the tree can keep growing until it has exactly one leaf node for every single observation, perfectly classifying them all. The solution to this it to limit the depth which reduces variance but increases bias. An alternative is to combine many decision trees into a single ensemble model known as a Random Forest. For each tree there is a random sample taken to create it. 
+
+Typically samples are drawn with replacement, known as bootstrapping. With this method, each tree might have high variance with respect to a specific set of the training data but overall the entire forest will have lower variance with the cost of increasing bias. Once trained the model can average the predictions of each tree which is a method known as bagging (bootstrap aggregating). There is also a method of voting as an alternative.
+
+When splitting nodes, a random subset of features is selected. This is conveniently set to the square root of the number of features (scikit learn default is the same). In regression tasks it is also common to consider all features at all nodes. 
+Overall, Random Forests are hard to beat in terms of performance, can perform regression and classification tasks, adn are often (depending on implementation) are quick to train. However, the downsides are that they take more time on the prediction side and are sometimes slow in real time implementation. For data including categorical variables with different number of levels (such as the data set we selected), random forests are biased in favor of those attributes with more levels. Could possibly translate the categorical datas into one-hot form. Solutions to this issue are an active area of research.
+
+There are several key hyperparameters that influence performance in addition to those already discussed (max depth, max features). The key ones include the max depth, min_impurity split, bootstrap, min samples split, etc. While most of these values are held at their default values, we tuned specifically the number of trees and depth of trees to give better performance while balancing computation time. Finally, to increase runtimes scikit can edit the number of processors you're using to run the system (n_jobs = -1, using all parallelization). The variables were parametrized and a limited number are presented. Higher numbers were discarded from the search as their computation time was too high.
+
+| Accuracy (%) | PCA      |1      |2    |4    |8    |10   |15   |20   |25   |30
+| -------------- |:------:| -----:| ---:| ---:| ---:| ---:| ---:| ---:| ---:| ---:|
+|#oT = 50     | MD = 2    |   43.5| 54.5| 61.5| 59.2| 60.4| 55.1| 55.0| 55.5| 55.4|
+|#oT = 100    | MD = 2    |   43.6| 55.5| 61.7| 59.0| 58.8| 55.5| 56.0| 56.9| 56.3|
+|#oT = 100    | MD = 4    |   44.0| 59.0| 63.3| 64.1| 64.2| 63.4| 63.4| 63.5| 63.0| 
+|#oT = 100    | MD = 6    |   45.1| 60.8| 66.2| 66.3| 67.2| 66.1| 66.4| 67.1| 66.7|
+|#oT = 100    | MD = 8    |   44.9| 62.0| 68.0| 68.8| 69.3| 68.7| 69.4| 70.3| 70.2|
+|#oT = 100    | MD = 10   |   45.1| 62.6| 69.3| 70.5| 71.4| 70.7| 71.4| 72.3| 72.4|
+|#oT = 1000   | MD = 10   |   45.0| 62.8| 69.3| 70.8| 71.2| 70.7| 71.6| 72.4| 72.5|
+
+After testing out different hyperparameters, across algorithms, we found an elbow point to occur around using 8 principle compoents. From here we selected the number of trees (#oT) and a max depth of 100. While increasing both these numbers increase the accuracy, it is at the cost of computation time on the training side. 
+
 
 ### Linear Regression
 
