@@ -42,8 +42,10 @@ The dataset is comprised of both numerical and categorical data. For a few class
 For example, the workclass feature has seven values: 'Federal-gov', 'Local-gov', 'Never-worked', 'Private', 'Self-emp-inc', 'Self-emp-not-inc', 'State-gov', and 'Without-pay'. After One-Hot encoding, the workclass feature gets removed and gets replaced by 'workclass_Federal-gov', 'workclass_Local-gov', 'workclass_Never-worked', 'workclass_Private', 'workclass_Self-emp-inc', 'workclass_Self-emp-not-inc', 'workclass_State-gov', and 'workclass_Without-pay' features. 
 
 | workclass |
-|-----------| is converted to 
+|-----------| 
 | State-gov |
+
+is converted to 
 
 | workclass_Federal-gov | workclass_Local-gov | workclass_Never-worked | workclass_Private | workclass_Self-emp-inc | workclass_Self-emp-not-inc | workclass_State-gov | workclass_Without-pay |
 |-----------------------|---------------------|------------------------|-------------------|------------------------|----------------------------|---------------------|-----------------------|
