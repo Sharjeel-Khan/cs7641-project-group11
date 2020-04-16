@@ -63,9 +63,11 @@ by the standard deviation.
 
 First, after we pre-process our data with the exception of one-hot encoding (to avoid mixing categorical and continuous features together), we run DBSCAN on the data to identify and remove outliers. We use MinPts = 20. To find Eps, we use the elbow method where we plotted the 20th-nearest-neighbor distance for each datapoint. 
 
-![Shown here is the elbow plot we used to determine Eps for DBSCAN.](/plots/dbscan_elbow.png)
+![Elbow plot to determine Eps for DBSCAN.](/plots/dbscan_elbow.png)
 
-With this graphical method, we identified Eps = 1.571. With these two parameters, 
+With this graphical method, we identified Eps = 1.571. With these two parameters, we are able to group our datapoints into two clusters and identify 44 noisy datapoints that we then delete from the dataset.
+
+![Density Plot.](/plots/dbscan_results.png)
 
 ### GMM
 
