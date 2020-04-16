@@ -28,9 +28,19 @@ Our source, as mentioned above, is the UCI Machine Learning Repository's Census 
 
 The original purpose of this dataset was to predict the 15th feature, which is listed as part of our dataset for our project.
 
-### Data Visualization
-
 ### Pre-Processing
+
+#### Irrelevant Features
+
+We decided to drop the fnlgwt feature, as it was irrelevant to this analysis.
+
+#### Standardization
+
+We standaridize the data.
+
+#### One-Hot Encoding
+
+Categorical data to continuous (ish)
 
 ## Unsupervised Learning
 
