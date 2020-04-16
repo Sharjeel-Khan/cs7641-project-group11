@@ -44,7 +44,13 @@ Categorical data to continuous (ish)
 
 ## Unsupervised Learning
 
+### DBSCAN
 
+Talk abour DBSCAN
+
+### GMM
+
+Talk about GMM
 
 ## Supervised Learning
 
