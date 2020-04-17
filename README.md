@@ -75,6 +75,8 @@ Talk about GMM
 
 ## Supervised Learning
 
+For supervised learning, we removed a single feature from the data and used it as a label. Then we used four different algorithms (SVM, Decision Trees, Random Forest, and Linear Regression) to see how well the algorithms could classify data for a specific label. The labels that we looked at were relationship, workclass, sex, and education.
+
 ### SVM
 
 Support Vector Machine is a form of supervised learning that classifies linearly separable data. Through methods such as one against all [4] and using kernels, we are able to perform multi-classification on data that is not linearly separable. In order to classify the census data, a third degree polynomial kernel was chosen because the data is not linearly separable and because it is less computationally expensive then other kernels. 
