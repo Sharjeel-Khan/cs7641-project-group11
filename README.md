@@ -75,6 +75,10 @@ With this graphical method, we identified Eps = 1.571. With these two parameters
 
 Upon removing the outliers from the dataset, we run a second clustering algorithm, GMM (Gaussian Mixture Models), to group datapoints into clusters that we can represent with univariate Gaussian distributions. We do this particular algorithm to group similar points together in order to fill in the unspecified labels in each categorical feature based on a majority vote of intracluster points. 
 
+To select how many components we would like to cluster our data into, we perform GMM from 1 component to 21 components, calculate the BIC (Bayesian Information Criterion) value for each of the models, and choose the one with the lowest BIC. In this case, we chose n_components = 18.
+
+![BIC plot.](/plots/gmm_bic.png)
+
 ## Supervised Learning
 
 For supervised learning, we removed a single feature from the data and used it as a label. Then we used four different algorithms (SVM, Decision Trees, Random Forest, and Linear Regression) to see how well the algorithms could classify data for a specific label. The labels that we looked at were relationship, workclass, sex, and education.
