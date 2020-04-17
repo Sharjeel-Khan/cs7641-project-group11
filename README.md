@@ -102,7 +102,7 @@ A decision tree classifier was utilized and trained on this dataset. We tuned us
 
 
 
-Iterating through these parameters together, we found that the highest accuracy of correctly labeling was achieved at a $\textbf{maximum depth of 10 and a minimum of sample splits at 0.0001.}$
+Iterating through these parameters together, we found that the highest accuracy of correctly labeling was achieved at a maximum depth of 10 and a minimum of sample splits at 0.0001.
 
 
 
