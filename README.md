@@ -77,7 +77,7 @@ Talk about GMM
 
 ### SVM
 
-Support Vector Machine is a form of supervised learning that classifies linearly separable data. Through methods such as one against all and using kernels, we are able to perform multi-classification on data that is not linearly separable. In order to classify the census data, a third degree polynomial kernel was chosen because the data is not linearly separable and because it is less computationally expensive then other kernels. 
+Support Vector Machine is a form of supervised learning that classifies linearly separable data. Through methods such as one against all [4] and using kernels, we are able to perform multi-classification on data that is not linearly separable. In order to classify the census data, a third degree polynomial kernel was chosen because the data is not linearly separable and because it is less computationally expensive then other kernels. 
 
 In order to get the best performance out of our classifier, we must tune the parameters C and gamma. In SVM, C is the regularization parameter which determines the size of the margin between classifications. If C is large then it will create a smaller margin and increase classification accuracy. A smaller C will create a larger margin and increase computation speed but may misclassify more. Gamma is the kernel coefficient and it determines how well the classification fits the data. The high value for gamma will mean overfitting, while a low value will result in a gamma that is not representative of the training data. 
 
@@ -133,4 +133,6 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 [2] Fairlie, Robert W., and Alicia M. Robb. "Gender differences in business performance: evidence from the Characteristics of Business Owners survey." Small Business Economics 33.4 (2009): 375.
 
 [3] Kohavi, R. (1994). UCI Center for Machine Learning and Intelligent Systems [Census Income Data Set]. Retrieved from: http://mlr.cs.umass.edu/ml/datasets/Census+Income
+
+[4] Ben Aisen. "A Comparison of Multiclass SVM Methods", Dec 15, 2006. https://courses.media.mit.edu/2006fall/mas622j/Projects/aisen-project/
 
