@@ -100,7 +100,8 @@ While the branches of the tree can become quite computationally expensive, there
 
 A decision tree classifier was utilized and trained on this dataset. We tuned using the maximum depth parameter and minimum of sample splits parameter discussed above. Maximum depth was examined from [1, 30] and minimum of sample splits was ranged from [0.0001, 1.0]. Iterating through these parameters separately, the following results were obtained.
 
-
+![Decision Tree Max Depth.](/plots/decision_tree_max_depth.PNG)
+![Decision Tree Min Sample Split.](/plots/decision_tree_min_sample_splits.PNG)
 
 Iterating through these parameters together, we found that the highest accuracy of correctly labeling was achieved at a maximum depth of 10 and a minimum of sample splits at 0.0001.
 
