@@ -126,7 +126,7 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 
 
 
-![Workclass Accuracy Results.](/plots/workclass_v2.png)
+![Workclass Accuracy Results.](/plots/workclass_v2.PNG)
 
 
 ## Conclusion
