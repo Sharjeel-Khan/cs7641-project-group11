@@ -94,6 +94,12 @@ A grid search method was used in order to choose appropriate parameters for the 
 
 ### Decision Tree
 
+Decision trees are a type of decision analysis that utilizes a tree-like model comprised of nodes and leaves, where the node represents the condition that will split the outcome and the leaves represent the outcomes. They are commonly used in machine learning techniques, especially for data mining, because of their robustness for missing data, quick computation time, and efficient avoidance of noise. Its branching capabilities cleanly separate complex, nonlinear data into linear boundaries. 
+
+While the branches of the tree can become quite computationally expensive, there are a number of parameters that can be tuned to maintain the efficiency and accuracy of decision trees. Parameter tuning includes maximum depth, the minimum number of samples required to split nodes, and quality measurement of the split. The maximum depth to search in the tree as the deeper the tree, the more splits it has.
+
+A decision tree classifier was utilized and trained on this dataset. We tuned using the maximum depth parameter and minimum of sample splits parameter discussed above. 
+
 
 
 ### Random Forest
