@@ -53,11 +53,13 @@ is converted to
 
 #### Standardization
 
-We used standardized the dataset by using scikit-learn's StandardScaler basically normalizing then scaling every datapoint
-by the standard deviation.
-
+We standardized the dataset by using scikit-learn's StandardScaler, which removes the mean and scales the data to unit variance.
 
 ## Unsupervised Learning
+
+For unsupervised learning, we use all the continuous features with the exception of fnlgwt. This is because there are no features with high variance magnitudes that we can use to reduce the dataset with. Even with discarding the feature with the lowest variance, the proportion of retained variance only reaches 83%.
+
+![Feature magnitude comparison for first component vector.](/plots/component_distribution.png)
 
 ### DBSCAN
 
@@ -71,7 +73,7 @@ With this graphical method, we identified Eps = 1.571. With these two parameters
 
 ### GMM
 
-Talk about GMM
+Upon removing the outliers from the dataset, we run a second clustering algorithm, GMM (Gaussian Mixture Models), to group datapoints into clusters that we can represent with univariate Gaussian distributions. We do this particular algorithm to group similar points together in order to fill in the unspecified labels in each categorical feature based on a majority vote of intracluster points. 
 
 ## Supervised Learning
 
