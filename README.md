@@ -124,6 +124,11 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 
 ## Results
 
+
+
+![Workclass Accuracy Results.](/plots/workclass_v2.png)
+
+
 ## Conclusion
 
 ## Distribution of Work
