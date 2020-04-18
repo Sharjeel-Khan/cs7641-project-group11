@@ -124,6 +124,14 @@ In order to get the best performance out of our classifier, we must tune the par
 
 A grid search method was used in order to choose appropriate parameters for the classifier. In this method, possible C and gamma terms were specified and were systematically checked to determine the accuracy that they produced. In the end, the parameters that produced the best accuracy while being computationally efficient was C = 1 gamma = 0.054. 
 
+| Accuracy (%) | gamma = 0.001      | 0.01      | 0.025   | 0.054   |
+| -------------- |:------:| -----:| ---:| ---:| ---:| 
+|C = 0.001   | 40.48    |   40.48| 40.48| 61.5| 43.88| 
+|C = 0.01    | 40.48    |   40.48| 43.85| 61.7| 62.08| 
+|C = 0.1    |  40.48   |   41.46| 62.07| 63.3| 68.97|  
+|C = 1    | 40.48   |   59.2| 68.96| 66.2| 69.78| 
+
+
 
 ### Decision Tree
 
