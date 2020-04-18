@@ -102,7 +102,7 @@ Upon removing the outliers from the dataset, we run a second clustering algorith
 
 To select how many components we would like to cluster our data into, we perform GMM from 1 component to 21 components, calculate the BIC (Bayesian Information Criterion) value for each of the models, and choose the one with the lowest BIC. In this case, we chose n_components = 19.
 
-![BIC plot.](/plots/all_gmm.JPG)
+![BIC plot.](/plots/all_dbscan_results.JPG)
 
 ## Supervised Learning <a name="supervised-learning"></a>
 
