@@ -183,43 +183,32 @@ Below are the results of PCA analysis of each of the supervised approaches previ
 
 ### Sex <a name="sex"></a>
 
-![Sex Accuracy Results.](/plots/PCA_Sex.JPG)
-![Sex Confusion Results.](/plots/Sex_both.JPG)
-
+![Sex Results.](/plots/all_Sex.JPG)
 
 
 ### Occupation <a name="occupation"></a>
 
-![Occupation Accuracy Results.](/plots/PCA_Occupation.JPG)
-![Occupation Confusion Results.](/plots/Occupation_both.JPG)
+![Occupation Results.](/plots/all_Occupation.JPG)
 
 
 ### Relationship <a name="relationship"></a>
 
-![Relationship Accuracy Results.](/plots/PCA_Relationship.JPG)
-![Relationship Confusion Results.](/plots/Relationship_both.JPG)
+![Relationship Results.](/plots/all_Relationship.JPG)
+
 
 
 ### Workclass <a name="workclass"></a>
 
-As seen below, accuracy of classifying workclass varied significantly for different algorithms and PCA values. SVM and Randome forest performed well acheiving accurarcies around 75%. Linear regression started off well but then as the PCA value grew it dropped to a low of 50% accurarcy. Lastly, Decision Trees hovered consistently around 60% accuracy.
+![Workclass Results.](/plots/all_Workclass.JPG)
 
-
-
-![Workclass Accuracy Results.](/plots/PCA_Workclass.JPG)
-
-
+As seen above, accuracy of classifying workclass varied significantly for different algorithms and PCA values. SVM and Randome forest performed well acheiving accurarcies around 75%. Linear regression started off well but then as the PCA value grew it dropped to a low of 50% accurarcy. Lastly, Decision Trees hovered consistently around 60% accuracy.
 
 It appears that both SVM and random forest had some succes in correcly classifying the data, however their "success" may be largely attributed to the data. A majority of the data had the label of "private" which meant that this person worked in the private sector. Since a majority of our training data had the label "private", our trained model will classify a majority of the test data as "private" as well (as seen in the confusion matrix below). This occurance goes to show the importance of evenly spread data that has a lot of variety. Without these traits in a data, our models are highly susceptible to our data bias.
 
 
-
-![Workclass Confusion Results.](/plots/Workclass_both.JPG)
-
-
 ### Education <a name="education"></a>
 
-![Education Accuracy Results.](/plots/all_Education.JPG)
+![Education Results.](/plots/all_Education.JPG)
 
 ## Conclusion <a name="conclusion"></a>
 
