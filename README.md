@@ -3,16 +3,16 @@
 ## Project Outline - Done
 ### I. Introduction
 ### II. Data
-  #### |    *Description*
-  #### |    *Pre-Processing*
+  ####  <br />   *Description*
+  ####   <br />  *Pre-Processing*
 ### III. Unsupervised Learning
-  #### |    *DBSCAN*
-  #### |    *Gaussian Mixture Model (GMM)*
+  ####  <br />   *DBSCAN*
+  ####  <br />   *Gaussian Mixture Model (GMM)*
 ### IV. Supervised Learning
-  #### |    *Support Vector Machine (SVM)*
-  #### |    *Decision Trees*
-  #### |    *Random Forests*
-  #### |    *Linear Regression*
+  ####   <br />  *Support Vector Machine (SVM)*
+  ####   <br />  *Decision Trees*
+  ####   <br />  *Random Forests*
+  ####   <br />  *Linear Regression*
 ### V. Results
 ### VI. Conclusion
 ### VII. Distribution of Work
