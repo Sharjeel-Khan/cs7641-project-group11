@@ -1,12 +1,14 @@
 # Career Optimization Utilizing Census Data
 
-## Introduction
+## Outline - Pooja
+
+## Introduction - Aakash
 
 Massive census datasets can reveal interesting aspects of the human condition and trends based on pure statistical data. Many previous studies have been conducted using these statistics. Interesting analyses to note include the definition of “rural” in the U.S. and business performance between female-owned and male-owned businesses [1, 2]. We are utilizing the UCI Machine Learning Repository’s Census Income Data Set [3] for further analysis of career development and what is a best-suited job based on statistical analysis of many attributes. We propose the development of optimized machine learning algorithms to predict and enhance users’ job selections to provide people with a variety of choices to eliminate growing career selection uncertainty. This project is driven by the economics concept of comparative advantage. Said to be the most important concept by Dr. Emily Oster of Brown, comparative advantage is the ability of an individual or group to carry out a particular economic activity (such as making a specific product) more efficiently than another activity.
 
 ## Data
 
-### Description
+### Description - Done
 
 Our source, as mentioned above, is the UCI Machine Learning Repository's Census Income Data Set. There are a total of 48,842 datapoints, with 15 continuous and categorical features associated with each datapoint:
 
@@ -28,13 +30,13 @@ Our source, as mentioned above, is the UCI Machine Learning Repository's Census 
 
 The original purpose of this dataset was to predict the 15th feature, which is listed as part of our dataset for our project.
 
-### Pre-Processing
+### Pre-Processing 
 
-#### Irrelevant Features
+#### Irrelevant Features - Sharjeel
 
 We decided to drop the fnlgwt feature, as it was irrelevant to this analysis.
 
-#### One-Hot Encoding
+#### One-Hot Encoding - Done
 
 The dataset is comprised of both numerical and categorical data. For a few classifiers, it is hard to use categorical data so we perform one-hot encoding. One-Hot encoding converts every categorical feature into new feature comprised of the values giving each new feature either 0 or 1. 
 
@@ -50,11 +52,11 @@ is converted to
 |-----------------------|---------------------|------------------------|-------------------|------------------------|----------------------------|---------------------|-----------------------|
 | 0                     | 0                   | 0                      | 0                 | 0                      | 0                          | 1                   | 0                     |
 
-#### Standardization
+#### Standardization - Done
 
 We standardized the dataset by using scikit-learn's StandardScaler, which removes the mean and scales the data to unit variance.
 
-## Unsupervised Learning
+## Unsupervised Learning -Done
 
 ### DBSCAN
 
@@ -105,7 +107,7 @@ Iterating through these parameters together, we found that the highest accuracy 
 
 
 
-### Random Forest
+### Random Forest - Highlight the best line Aakash
 Random Forests are an extension of Decision Trees. Decision trees will not make mistakes with their training data and may overfit (assuming unlimited depth). The model will not only learn the training set but also the noise of the system itself. With unlimited depth, ther is unlimited flexibility so the tree can keep growing until it has exactly one leaf node for every single observation, perfectly classifying them all. The solution to this it to limit the depth which reduces variance but increases bias. An alternative is to combine many decision trees into a single ensemble model known as a Random Forest. For each tree there is a random sample taken to create it. 
 
 Typically samples are drawn with replacement, known as bootstrapping. With this method, each tree might have high variance with respect to a specific set of the training data but overall the entire forest will have lower variance with the cost of increasing bias. Once trained the model can average the predictions of each tree which is a method known as bagging (bootstrap aggregating). There is also a method of voting as an alternative.
@@ -139,6 +141,9 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 
 ## Results
 
+### Sex
+
+
 ### Workclass
 
 As seen below, accuracy of classifying workclass varied significantly for different algorithms and PCA values. SVM and Randome forest performed well acheiving accurarcies around 75%. Linear regression started off well but then as the PCA value grew it dropped to a low of 50% accurarcy. Lastly, Decision Trees hovered consistently around 60% accuracy.
@@ -152,7 +157,7 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 ## Distribution of Work
 
-## References
+## References - Everyone
 
 [1] Ratcliffe, Michael, et al. "Defining rural at the US Census Bureau." American community survey and geography brief  (2016): 8.
 
