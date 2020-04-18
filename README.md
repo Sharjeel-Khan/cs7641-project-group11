@@ -86,7 +86,7 @@ With this graphical method, we identified Eps = 1.571. With these two parameters
 
 ### GMM
 
-Upon removing the outliers from the dataset, we run a second clustering algorithm, GMM (Gaussian Mixture Models), to group datapoints into clusters that we can represent with univariate Gaussian distributions. We do this particular algorithm to group similar points together in order to fill in the unspecified labels in each categorical feature based on a majority vote of intracluster points. 
+Upon removing the outliers from the dataset, we run a second clustering algorithm, GMM (Gaussian Mixture Models), to group datapoints into clusters that we can represent with univariate Gaussian distributions. We do this particular algorithm to group similar points together in order to gap-fill the unspecified labels in each categorical feature based on a majority vote of intracluster points. In literature, more complex methods are implemented for this very task, but for this project, a majority vote suffices [5].
 
 To select how many components we would like to cluster our data into, we perform GMM from 1 component to 21 components, calculate the BIC (Bayesian Information Criterion) value for each of the models, and choose the one with the lowest BIC. In this case, we chose n_components = 19.
 
@@ -98,7 +98,7 @@ For supervised learning, we removed a single feature from the data and used it a
 
 ### SVM
 
-Support Vector Machine is a form of supervised learning that classifies linearly separable data. Through methods such as one against all [5] and using kernels, we are able to perform multi-classification on data that is not linearly separable. In order to classify the census data, a third degree polynomial kernel was chosen because the data is not linearly separable and because it is less computationally expensive then other kernels. 
+Support Vector Machine is a form of supervised learning that classifies linearly separable data. Through methods such as one against all [6] and using kernels, we are able to perform multi-classification on data that is not linearly separable. In order to classify the census data, a third degree polynomial kernel was chosen because the data is not linearly separable and because it is less computationally expensive then other kernels. 
 
 In order to get the best performance out of our classifier, we must tune the parameters C and gamma. In SVM, C is the regularization parameter which determines the size of the margin between classifications. If C is large then it will create a smaller margin and increase classification accuracy. A smaller C will create a larger margin and increase computation speed but may misclassify more. Gamma is the kernel coefficient and it determines how well the classification fits the data. The high value for gamma will mean overfitting, while a low value will result in a gamma that is not representative of the training data. 
 
@@ -186,5 +186,7 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 [4] A. Ajiboye and al., “Anomaly Detection in Dataset for Improved Model Accuracy Using DBSCAN Clustering Algorithm,” African Journal of Computing and ICTs, vol. 8, pp. 39–46, 2015.
 
-[5] Ben Aisen. "A Comparison of Multiclass SVM Methods", Dec 15, 2006. https://courses.media.mit.edu/2006fall/mas622j/Projects/aisen-project/
+[5] Melchior, P. and Goulding, A. D. (2018) Filling the gaps: Gaussian mixture models from noisy, truncated or incomplete samples. Astronomy and Computing, 25, 183–194.
+
+[6] Ben Aisen. "A Comparison of Multiclass SVM Methods", Dec 15, 2006. https://courses.media.mit.edu/2006fall/mas622j/Projects/aisen-project/
 
