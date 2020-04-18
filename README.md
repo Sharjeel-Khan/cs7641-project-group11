@@ -79,7 +79,7 @@ We standardized the dataset by using scikit-learn's StandardScaler, which remove
 First, after we pre-process our data with the exception of one-hot encoding (to avoid mixing categorical and continuous features together), we run DBSCAN on the data to identify and remove outliers, increasing the purity of our dataset [4]. We use MinPts = 20. To find Eps, we use the elbow method where we plotted the 20th-nearest-neighbor distance for each datapoint. 
 
 <p align="center">
-![Elbow plot to determine Eps for DBSCAN.](/plots/dbscan_elbow.png)
+    ![Elbow plot to determine Eps for DBSCAN.](/plots/dbscan_elbow.png)
 </p>
 
 With this graphical method, we identified Eps = 1.571. With these two parameters, we are able to group our datapoints into two clusters and identify 44 noisy datapoints (labeled as -1 by the scikit-learn DBSCAN function) that we then delete from the dataset.
