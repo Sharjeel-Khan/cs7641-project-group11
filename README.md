@@ -219,8 +219,7 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 ### Education <a name="education"></a>
 
-![Education Accuracy Results.](/plots/PCA_Education.JPG)
-![Education Confusion Results.](/plots/Education_both.JPG)
+![Education Accuracy Results.](/plots/all_Education.JPG)
 
 ## Conclusion <a name="conclusion"></a>
 
