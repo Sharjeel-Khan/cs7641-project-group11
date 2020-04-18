@@ -174,9 +174,22 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 
 ### Sex
 
+
+![Workclass Confusion Results.](/plots/Sex_both.JPG)
+
+
+
 ### Occupation
 
+
+![Workclass Confusion Results.](/plots/Occupation_both.JPG)
+
+
 ### Relationship
+
+
+![Workclass Confusion Results.](/plots/Relationship_both.JPG)
+
 
 ### Workclass
 
@@ -192,7 +205,7 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 
 
-![Workclass Confusion Results.](/plots/Workclass_N.JPG)
+![Workclass Confusion Results.](/plots/Workclass_both.JPG)
 
 
 ## Conclusion <a name="conclusion"></a>
