@@ -90,11 +90,11 @@ A preliminary exploration of this massive dataset was required. All variables we
 
 First, after we pre-process our data with the exception of one-hot encoding (to avoid mixing categorical and continuous features together), we run DBSCAN on the data to identify and remove outliers, increasing the purity of our dataset [4]. We use MinPts = 20. To find Eps, we use the elbow method where we plotted the 20th-nearest-neighbor distance for each datapoint. 
 
-![Elbow plot to determine Eps for DBSCAN.](/plots/dbscan_elbow.png)
+![Elbow plot to determine Eps for DBSCAN.](/plots/all_dbscan_elbow.JPG)
 
 With this graphical method, we identified Eps = 1.571. With these two parameters, we are able to group our datapoints into two clusters and identify 44 noisy datapoints (labeled as -1 by the scikit-learn DBSCAN function) that we then delete from the dataset.
 
-![Density Plot.](/plots/dbscan_results.png)
+![Density Plot.](/plots/all_dbscan_results.JPG)
 
 ### GMM <a name="gmm"></a>
 
@@ -102,7 +102,7 @@ Upon removing the outliers from the dataset, we run a second clustering algorith
 
 To select how many components we would like to cluster our data into, we perform GMM from 1 component to 21 components, calculate the BIC (Bayesian Information Criterion) value for each of the models, and choose the one with the lowest BIC. In this case, we chose n_components = 19.
 
-![BIC plot.](/plots/gmm_bic.png)
+![BIC plot.](/plots/all_gmm.JPG)
 
 ## Supervised Learning <a name="supervised-learning"></a>
 
@@ -133,9 +133,7 @@ While the branches of the tree can become quite computationally expensive, there
 
 A decision tree classifier was utilized and trained on this dataset. We tuned using the maximum depth parameter and minimum of sample splits parameter discussed above. Maximum depth was examined from [1, 30] and minimum of sample splits was ranged from [0.0001, 1.0]. Iterating through these parameters separately, the following results were obtained.
 
-![Decision Tree Max Depth.](/plots/decision_tree_max_depth_v2.png)
-
-![Decision Tree Min Sample Split.](/plots/decision_tree_min_sample_splits_v3.png)
+![Decision Tree Tuning.](/plots/all_decisiontree.JPG)
 
 
 Iterating through these parameters together, we found that the highest accuracy of correctly labeling was achieved at a maximum depth of 10 and a minimum of sample splits at 0.0001.
@@ -174,8 +172,7 @@ For regression, there are two hyperparameters: alpha, and maximum iterations. Ri
 
 Also, most of our predicted features are categorical features. Compared to the above classifiers, regression does not work if we just map our categorical feature onto numbers so we decided to do a multi-class linear regression. Multi-class linear regression means encoding the categorical feature using one-hot encoding then creating a linear regression **$l_i(x)$** for each one-hot encoding feature. When it comes to predicting for a datapoint **x**, we just maximize over all the linear regression on the datapoint **$max_{i}  l_i(x)$** and output the class that had the maximum value given by their linear regression.
 
-![HyperParameter Tuning for Alpha.](/plots/Linear_HyperParameter_Alpha.png)
-![HyperParameter Tuning for Max_iterations.](/plots/Linear_HyperParameter_Max_iterations.png)
+![Regression HyperParameter Tuning.](/plots/all_regression.JPG)
 
 ## Results <a name="results"></a>
 Below are the results of PCA analysis of each of the supervised approaches previously discussed. While we were particularly interested in occupation, 
