@@ -1,24 +1,5 @@
 # Career Optimization Utilizing Census Data
 
-## Project Outline
-1. [Introduction](#introduction)
-2. [Data](#data)
-    1. [Description](#description)
-    2. [Pre-Processing](#pre-processing)
-3. [Unsupervised Learning](#unsupervised-learning)
-    1. [DBSCAN](#dbscan)
-    2. [Gaussian Mixture Model (GMM)](#gmm)
-4. [Supervised Learning](#supervised-learning)
-    1. [Support Vector Machine (SVM)](#svm)
-    2. [Decision Trees](#decisiontrees)
-    3. [Random Forests](#randomforests)
-    4. [Linear Regression](#linearregression)
-5. [Results](#results)
-6. [Conclusion](#conclusion)
-7. [Distribution of Work](#distribution)
-8. [References](#references)
-
-
 ## Project Outline - Done
 ### [I. Introduction](#introduction)
 ### II. Data
@@ -123,6 +104,13 @@ Support Vector Machine is a form of supervised learning that classifies linearly
 In order to get the best performance out of our classifier, we must tune the parameters C and gamma. In SVM, C is the regularization parameter which determines the size of the margin between classifications. If C is large then it will create a smaller margin and increase classification accuracy. A smaller C will create a larger margin and increase computation speed but may misclassify more. Gamma is the kernel coefficient and it determines how well the classification fits the data. The high value for gamma will mean overfitting, while a low value will result in a gamma that is not representative of the training data. 
 
 A grid search method was used in order to choose appropriate parameters for the classifier. In this method, possible C and gamma terms were specified and were systematically checked to determine the accuracy that they produced. In the end, the parameters that produced the best accuracy while being computationally efficient was C = 1 gamma = 0.054. 
+
+| Accuracy (%) | gamma = 0.001      | 0.01      | 0.025   | 0.054   |
+| -------------- |:------:| -----:| ---:| ---:| ---:| 
+|C = 0.001   | 40.48    |   40.48| 40.48| 61.5| 43.88| 
+|C = 0.01    | 40.48    |   40.48| 43.85| 61.7| 62.08| 
+|C = 0.1    |  40.48   |   41.46| 62.07| 63.3| 68.97|  
+|C = 1    | 40.48   |   59.2| 68.96| 66.2| 69.78|
 
 
 ### Decision Tree
