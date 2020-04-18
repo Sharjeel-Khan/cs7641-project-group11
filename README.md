@@ -144,6 +144,12 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 
 ## Results
 
+### Relationships
+
+### Occupation
+
+### Sex
+
 ### Workclass
 
 As seen below, accuracy of classifying workclass varied significantly for different algorithms and PCA values. SVM and Randome forest performed well acheiving accurarcies around 75%. Linear regression started off well but then as the PCA value grew it dropped to a low of 50% accurarcy. Lastly, Decision Trees hovered consistently around 60% accuracy.
