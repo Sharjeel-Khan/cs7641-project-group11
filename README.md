@@ -1,5 +1,24 @@
 # Career Optimization Utilizing Census Data
 
+## Project Outline
+1. [Introduction](#introduction)
+2. [Data](#data)
+    1. [Description](#description)
+    2. [Pre-Processing](#pre-processing)
+3. [Unsupervised Learning](#unsupervised-learning)
+    1. [DBSCAN](#dbscan)
+    2. [Gaussian Mixture Model (GMM)](#gmm)
+4. [Supervised Learning](#supervised-learning)
+    1. [Support Vector Machine (SVM)](#svm)
+    2. [Decision Trees](#decisiontrees)
+    3. [Random Forests](#randomforests)
+    4. [Linear Regression](#linearregression)
+5. [Results](#results)
+6. [Conclusion](#conclusion)
+7. [Distribution of Work](#distribution)
+8. [References](#references)
+
+
 ## Project Outline - Done
 ### [I. Introduction](#introduction)
 ### II. Data
