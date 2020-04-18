@@ -212,6 +212,8 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 ## Conclusion <a name="conclusion"></a>
 
+In this project, we use supervised and unsupervised learning methods to ______. With unsupervised learning, we were able to detect outliers in our data using DBSCAN and gap-fill unspecificied labels using GMM. 
+
 ## Distribution of Work <a name="distribution"></a>
 
 ## References - Everyone <a name="references"></a>
