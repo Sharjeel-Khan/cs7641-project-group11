@@ -177,8 +177,9 @@ As seen below, accuracy of classifying workclass varied significantly for differ
 
 ![Workclass Accuracy Results.](/plots/workclass_v2.PNG)
 
-It appears that both SVM and random forest had some succes in correcly classifying the data, however their "success" may be largely attributed to the data. A majority of the data had the label of "private" which meant that this person worked in the private sector. Since a majority of our training data had the label "private", our trained model will classify a majority of the test data as "private" as well. This occurance goes to show the importance of evenly spread data that has a lot of variety. Without these traits in a data, our models are highly susceptible to our data bias.
+It appears that both SVM and random forest had some succes in correcly classifying the data, however their "success" may be largely attributed to the data. A majority of the data had the label of "private" which meant that this person worked in the private sector. Since a majority of our training data had the label "private", our trained model will classify a majority of the test data as "private" as well (as seen in the confusion matrix below). This occurance goes to show the importance of evenly spread data that has a lot of variety. Without these traits in a data, our models are highly susceptible to our data bias.
 
+![Workclass Confusion Results.](/plots/Workclass_N.JPG)
 
 ## Conclusion <a name="conclusion"></a>
 
