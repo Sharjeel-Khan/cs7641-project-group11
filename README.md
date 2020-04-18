@@ -5,6 +5,7 @@
 2. [Data](#data)
     1. [Description](#description)
     2. [Pre-Processing](#pre-processing)
+    3. [Data Exploration](#data-exploration)
 3. [Unsupervised Learning](#unsupervised-learning)
     1. [DBSCAN](#dbscan)
     2. [Gaussian Mixture Model (GMM)](#gmm)
@@ -71,6 +72,12 @@ is converted to
 #### Standardization - Done
 
 We standardized the dataset by using scikit-learn's StandardScaler, which removes the mean and scales the data to unit variance.
+
+### Data Exploration <a name="data_exploration"></a>
+
+A preliminary exploration of this massive dataset was required. All variables were plotted against each other to determine where interesting points existed. Below is an example of some of the preliminary analysis.
+
+![Prelim Data plot.](/plots/prelim_data.png)
 
 ## Unsupervised Learning -Done <a name="unsupervised-learning"></a>
 
