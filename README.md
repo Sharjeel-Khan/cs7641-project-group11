@@ -5,7 +5,6 @@
 Massive census datasets can reveal interesting aspects of the human condition and trends based on pure statistical data. Many previous studies have been conducted using these statistics. Interesting analyses to note include the definition of “rural” in the U.S. and business performance between female-owned and male-owned businesses [1, 2]. We are utilizing the UCI Machine Learning Repository’s Census Income Data Set [3] for further analysis of career development and what is a best-suited job based on statistical analysis of many attributes. We propose the development of optimized machine learning algorithms to predict and enhance users’ job selections to provide people with a variety of choices to eliminate growing career selection uncertainty. This project is driven by the economics concept of comparative advantage. Said to be the most important concept by Dr. Emily Oster of Brown, comparative advantage is the ability of an individual or group to carry out a particular economic activity (such as making a specific product) more efficiently than another activity.
 
 ## Data
-Dont pick census data
 
 ### Description
 
@@ -56,10 +55,6 @@ is converted to
 We standardized the dataset by using scikit-learn's StandardScaler, which removes the mean and scales the data to unit variance.
 
 ## Unsupervised Learning
-
-For unsupervised learning, we use all the continuous features with the exception of fnlgwt. This is because there are no features with high variance magnitudes that we can use to reduce the dataset with. Even with discarding the feature with the lowest variance, the proportion of retained variance only reaches 83%.
-
-![Feature magnitude comparison for first component vector.](/plots/component_distribution.png)
 
 ### DBSCAN
 
@@ -143,12 +138,6 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 ![HyperParameter Tuning for Max_iterations.](/plots/Linear_HyperParameter_Max_iterations.png)
 
 ## Results
-
-### Relationships
-
-### Occupation
-
-### Sex
 
 ### Workclass
 
