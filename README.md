@@ -176,7 +176,7 @@ Also, most of our predicted features are categorical features. Compared to the a
 
 
 
-![HyperParameter Tuning for Polynomial Degree.](/plots/Linear_HyperParameter_Polynomial_Degree.png =250x)
+![HyperParameter Tuning for Polynomial Degree.](/plots/Linear_HyperParameter_Polynomial_Degree.png)
 ![HyperParameter Tuning for Alpha.](/plots/Linear_HyperParameter_Alpha.png)
 ![HyperParameter Tuning for Max_iterations.](/plots/Linear_HyperParameter_Max_iterations.png)
 
