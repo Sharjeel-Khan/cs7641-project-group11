@@ -159,6 +159,9 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 
 ### Sex
 
+### Occupation
+
+### Relationship
 
 ### Workclass
 
