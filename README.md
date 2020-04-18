@@ -171,6 +171,8 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 ![HyperParameter Tuning for Max_iterations.](/plots/Linear_HyperParameter_Max_iterations.png)
 
 ## Results <a name="results"></a>
+Below are the results of PCA analysis of each of the supervised approaches previously discussed. While we were particularly interested in occupation, 
+
 
 ### Sex
 
