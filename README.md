@@ -204,11 +204,12 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 [5] Melchior, P. and Goulding, A. D. (2018) Filling the gaps: Gaussian mixture models from noisy, truncated or incomplete samples. Astronomy and Computing, 25, 183–194.
 
+[6] Ben Aisen. "A Comparison of Multiclass SVM Methods", Dec 15, 2006. https://courses.media.mit.edu/2006fall/mas622j/Projects/aisen-project/
+
 [7] A. Painsky and S. Rosset, "Cross-Validated Variable Selection in Tree-Based Methods Improves Predictive Performance," in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 39, no. 11, pp. 2142-2153, 1 Nov. 2017.
 
 [8] Strobl, Carolin & Boulesteix, Anne-Laure & Augustin, Thomas. (2007). Unbiased split selection for classification trees based on the Gini Index. Computational Statistics & Data Analysis. 52. 483-501. 10.1016/j.csda.2006.12.030.
 
 [9] Deng, Houtao & Runger, George & Tuv, Eugene. (2011). Bias of Importance Measures for Multi-valued Attributes and Solutions. Lecture Notes in Computer Science. 6792. 293-300. 10.1007/978-3-642-21738-8_38.
 
-[6] Ben Aisen. "A Comparison of Multiclass SVM Methods", Dec 15, 2006. https://courses.media.mit.edu/2006fall/mas622j/Projects/aisen-project/
 
