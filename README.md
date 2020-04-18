@@ -54,9 +54,9 @@ The original purpose of this dataset was to predict the 15th feature, which is l
 
 ### Pre-Processing <a name="pre-processing"></a>
 
-#### Irrelevant Features - Sharjeel
+#### Irrelevant Features - Done
 
-We decided to drop the fnlgwt feature, as it was irrelevant to this analysis.
+The fnlwgt feature is the number of people that the census believes the datapoint represents based on the total population. We thought the feature does not help predict other features because different datapoints can represent the same number of people so we dropped the fnlwgt feature. 
 
 #### One-Hot Encoding - Done
 
