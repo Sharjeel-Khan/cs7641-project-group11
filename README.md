@@ -18,26 +18,6 @@
 7. [Distribution of Work](#distribution)
 8. [References](#references)
 
-
-## Project Outline - Done
-### [I. Introduction](#introduction)
-### II. Data
-  #### * *Description* 
-  #### * *Pre-Processing*
-### III. Unsupervised Learning
-  #### * *DBSCAN*
-  #### * *Gaussian Mixture Model (GMM)*  
-### IV. Supervised Learning
-  #### * *Support Vector Machine (SVM)* 
-  #### * *Decision Trees* 
-  #### * *Random Forests*
-  #### * *Linear Regression*
-### V. Results
-### VI. Conclusion
-### VII. Distribution of Work
-### VIII. References
-
-
 ## Introduction - Aakash <a name="introduction"></a>
 
 Massive census datasets can reveal interesting aspects of the human condition and trends based on pure statistical data. Many previous studies have been conducted using these statistics. Interesting analyses to note include the definition of “rural” in the U.S. and business performance between female-owned and male-owned businesses [1, 2]. We are utilizing the UCI Machine Learning Repository’s Census Income Data Set [3] for further analysis of career development and what is a best-suited job based on statistical analysis of many attributes. We propose the development of optimized machine learning algorithms to predict and enhance users’ job selections to provide people with a variety of choices to eliminate growing career selection uncertainty. This project is driven by the economics concept of comparative advantage. Said to be the most important concept by Dr. Emily Oster of Brown, comparative advantage is the ability of an individual or group to carry out a particular economic activity (such as making a specific product) more efficiently than another activity.
@@ -112,11 +92,11 @@ To select how many components we would like to cluster our data into, we perform
 
 ![BIC plot.](/plots/gmm_bic.png)
 
-## Supervised Learning
+## Supervised Learning <a name="supervised-learning"></a>
 
 For supervised learning, we removed a single feature from the data and used it as a label. Then we used four different algorithms (SVM, Decision Trees, Random Forest, and Linear Regression) to see how well the algorithms could classify data for a specific label. The labels that we looked at were relationship, workclass, sex, and education.
 
-### SVM
+### SVM <a name="svm"></a>
 
 Support Vector Machine is a form of supervised learning that classifies linearly separable data. Through methods such as one against all [6] and using kernels, we are able to perform multi-classification on data that is not linearly separable. In order to classify the census data, a third degree polynomial kernel was chosen because the data is not linearly separable and because it is less computationally expensive then other kernels. 
 
@@ -125,15 +105,15 @@ In order to get the best performance out of our classifier, we must tune the par
 A grid search method was used in order to choose appropriate parameters for the classifier. In this method, possible C and gamma terms were specified and were systematically checked to determine the accuracy that they produced. In the end, the parameters that produced the best accuracy while being computationally efficient was C = 1 gamma = 0.054. 
 
 | Accuracy (%) | gamma = 0.001      | 0.01      | 0.025   | 0.054   |
-| -------------- |:------:| -----:| ---:| ---:| 
-|C = 0.001   | 40.48    |   40.48| 40.48| 43.88| 
-|C = 0.01    | 40.48    |   40.48| 43.85| 62.08| 
-|C = 0.1    |  40.48   |   41.46| 62.07| 68.97|  
-|C = 1    | 40.48   |   59.2| 68.96| 69.78|
+| -------------- |:------:| -----:| ---:| ---:| ---:| 
+|C = 0.001   | 40.48    |   40.48| 40.48| 61.5| 43.88| 
+|C = 0.01    | 40.48    |   40.48| 43.85| 61.7| 62.08| 
+|C = 0.1    |  40.48   |   41.46| 62.07| 63.3| 68.97|  
+|C = 1    | 40.48   |   59.2| 68.96| 66.2| 69.78| 
 
 
 
-### Decision Tree
+### Decision Tree <a name="decisiontrees"></a>
 
 Decision trees are a type of decision analysis that utilizes a tree-like model comprised of nodes and leaves, where the node represents the condition that will split the outcome and the leaves represent the outcomes. They are commonly used in machine learning techniques, especially for data mining, because of their robustness for missing data, quick computation time, and efficient avoidance of noise. Its branching capabilities cleanly separate complex, nonlinear data into linear boundaries. 
 
@@ -151,7 +131,7 @@ Iterating through these parameters together, we found that the highest accuracy 
 
 
 
-### Random Forest - Highlight the best line Aakash
+### Random Forest - Highlight the best line Aakash <a name="randomforests"></a>
 Random Forests are an extension of Decision Trees. Decision trees will not make mistakes with their training data and may overfit (assuming unlimited depth). The model will not only learn the training set but also the noise of the system itself. With unlimited depth, ther is unlimited flexibility so the tree can keep growing until it has exactly one leaf node for every single observation, perfectly classifying them all. The solution to this it to limit the depth which reduces variance but increases bias. An alternative is to combine many decision trees into a single ensemble model known as a Random Forest. For each tree there is a random sample taken to create it. 
 
 Typically samples are drawn with replacement, known as bootstrapping. With this method, each tree might have high variance with respect to a specific set of the training data but overall the entire forest will have lower variance with the cost of increasing bias. Once trained the model can average the predictions of each tree which is a method known as bagging (bootstrap aggregating). There is also a method of voting as an alternative.
@@ -174,7 +154,7 @@ There are several key hyperparameters that influence performance in addition to 
 After testing out different hyperparameters, across algorithms, we found an elbow point to occur around using 8 principle compoents. From here we selected the number of trees (#oT) and a max depth of 100. While increasing both these numbers increase the accuracy, it is at the cost of computation time on the training side. 
 
 
-### Linear Regression
+### Linear Regression <a name="linearregression"></a>
 
 Regression is used to estimate the relationship between the training variables and the outcome. It can also be used for predicting the value based on the training set. We decided to use Linear Regression to figure out if we can build a linear function to help predict the different features. Due to the overfitting problem of Linear Regression, we also try Ridge and Lasso Regression to regularize the linear function so it does not overfit the training data.
 For regression, there are three hyperparameters: polynomial degree, alpha, and maximum iterations. A normal linear function is a line and the line was not accomodating all the data points so the polynomial degree converts the PCA components into higher degree functions. As for the other hyperparameters, Ridge and Lasso regression trains use coordinate descent and the hyperparameters define how long to train the regression model . From the graphs below, we figured out that the dataset works perfectly for polynomial degree = 4, alpha=0.1, and max-iterations=2000.
@@ -183,7 +163,7 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 ![HyperParameter Tuning for Alpha.](/plots/Linear_HyperParameter_Alpha.png)
 ![HyperParameter Tuning for Max_iterations.](/plots/Linear_HyperParameter_Max_iterations.png)
 
-## Results
+## Results <a name="results"></a>
 
 ### Sex
 
@@ -200,11 +180,11 @@ As seen below, accuracy of classifying workclass varied significantly for differ
 It appears that both SVM and random forest had some succes in correcly classifying the data, however their "success" may be largely attributed to the data. A majority of the data had the label of "private" which meant that this person worked in the private sector. Since a majority of our training data had the label "private", our trained model will classify a majority of the test data as "private" as well. This occurance goes to show the importance of evenly spread data that has a lot of variety. Without these traits in a data, our models are highly susceptible to our data bias.
 
 
-## Conclusion
+## Conclusion <a name="conclusion"></a>
 
-## Distribution of Work
+## Distribution of Work <a name="distribution"></a>
 
-## References - Everyone
+## References - Everyone <a name="references"></a>
 
 [1] Ratcliffe, Michael, et al. "Defining rural at the US Census Bureau." American community survey and geography brief  (2016): 8.
 
