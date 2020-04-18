@@ -183,21 +183,21 @@ Below are the results of PCA analysis of each of the supervised approaches previ
 
 ### Sex <a name="sex"></a>
 
-
-![Workclass Confusion Results.](/plots/Sex_both.JPG)
+![Sex Accuracy Results.](/plots/PCA_Sex.JPG)
+![Sex Confusion Results.](/plots/Sex_both.JPG)
 
 
 
 ### Occupation <a name="occupation"></a>
 
-
-![Workclass Confusion Results.](/plots/Occupation_both.JPG)
+![Occupation Accuracy Results.](/plots/PCA_Occupation.JPG)
+![Occupation Confusion Results.](/plots/Occupation_both.JPG)
 
 
 ### Relationship <a name="relationship"></a>
 
-
-![Workclass Confusion Results.](/plots/Relationship_both.JPG)
+![Relationship Accuracy Results.](/plots/PCA_Relationship.JPG)
+![Relationship Confusion Results.](/plots/Relationship_both.JPG)
 
 
 ### Workclass <a name="workclass"></a>
@@ -206,7 +206,7 @@ As seen below, accuracy of classifying workclass varied significantly for differ
 
 
 
-![Workclass Accuracy Results.](/plots/workclass_v2.PNG)
+![Workclass Accuracy Results.](/plots/PCA_Workclass.JPG)
 
 
 
@@ -219,7 +219,8 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 ### Education <a name="education"></a>
 
-
+![Education Accuracy Results.](/plots/PCA_Education.JPG)
+![Education Confusion Results.](/plots/Education_both.JPG)
 
 ## Conclusion <a name="conclusion"></a>
 
