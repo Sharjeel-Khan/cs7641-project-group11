@@ -15,6 +15,11 @@
     3. [Random Forests](#randomforests)
     4. [Linear Regression](#linearregression)
 5. [Results](#results)
+    1. [Sex](#sex)
+    2. [Occupation](#occupation)
+    3. [Relationship](#relationship)
+    4. [Workclass](#workclass)
+    5. [Education](#education)
 6. [Conclusion](#conclusion)
 7. [Distribution of Work](#distribution)
 8. [References](#references)
@@ -25,7 +30,7 @@ Massive census datasets can reveal interesting aspects of the human condition an
 
 ## Data <a name="data"></a>
 
-### Description - Done <a name="description"></a>
+### Description  <a name="description"></a>
 
 Our source, as mentioned above, is the UCI Machine Learning Repository's Census Income Data Set. There are a total of 48,842 datapoints, with 15 continuous and categorical features associated with each datapoint:
 
@@ -171,7 +176,7 @@ Also, most of our predicted features are categorical features. Compared to the a
 
 
 
-![HyperParameter Tuning for Polynomial Degree.](/plots/Linear_HyperParameter_Polynomial_Degree.png)
+![HyperParameter Tuning for Polynomial Degree.](/plots/Linear_HyperParameter_Polynomial_Degree.png =250x)
 ![HyperParameter Tuning for Alpha.](/plots/Linear_HyperParameter_Alpha.png)
 ![HyperParameter Tuning for Max_iterations.](/plots/Linear_HyperParameter_Max_iterations.png)
 
@@ -179,26 +184,26 @@ Also, most of our predicted features are categorical features. Compared to the a
 Below are the results of PCA analysis of each of the supervised approaches previously discussed. While we were particularly interested in occupation, 
 
 
-### Sex
+### Sex <a name="sex"></a>
 
 
 ![Workclass Confusion Results.](/plots/Sex_both.JPG)
 
 
 
-### Occupation
+### Occupation <a name="occupation"></a>
 
 
 ![Workclass Confusion Results.](/plots/Occupation_both.JPG)
 
 
-### Relationship
+### Relationship <a name="relationship"></a>
 
 
 ![Workclass Confusion Results.](/plots/Relationship_both.JPG)
 
 
-### Workclass
+### Workclass <a name="workclass"></a>
 
 As seen below, accuracy of classifying workclass varied significantly for different algorithms and PCA values. SVM and Randome forest performed well acheiving accurarcies around 75%. Linear regression started off well but then as the PCA value grew it dropped to a low of 50% accurarcy. Lastly, Decision Trees hovered consistently around 60% accuracy.
 
@@ -213,6 +218,10 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 
 ![Workclass Confusion Results.](/plots/Workclass_both.JPG)
+
+
+### Education <a name="education"></a>
+
 
 
 ## Conclusion <a name="conclusion"></a>
