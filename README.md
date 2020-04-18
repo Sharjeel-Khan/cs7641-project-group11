@@ -1,16 +1,35 @@
 # Career Optimization Utilizing Census Data
 
+## Project Outline
+1. [Introduction](#introduction)
+2. [Data](#data)
+    1. [Description](#description)
+    2. [Pre-Processing](#pre-processing)
+3. [Unsupervised Learning](#unsupervised-learning)
+    1. [DBSCAN](#dbscan)
+    2. [Gaussian Mixture Model (GMM)](#gmm)
+4. [Supervised Learning](#supervised-learning)
+    1. [Support Vector Machine (SVM)](#svm)
+    2. [Decision Trees](#decisiontrees)
+    3. [Random Forests](#randomforests)
+    4. [Linear Regression](#linearregression)
+5. [Results](#results)
+6. [Conclusion](#conclusion)
+7. [Distribution of Work](#distribution)
+8. [References](#references)
+
+
 ## Project Outline - Done
-### I. Introduction
+### [I. Introduction](#introduction)
 ### II. Data
-  #### * *Description*
+  #### * *Description* 
   #### * *Pre-Processing*
 ### III. Unsupervised Learning
   #### * *DBSCAN*
-  #### * *Gaussian Mixture Model (GMM)*
+  #### * *Gaussian Mixture Model (GMM)*  
 ### IV. Supervised Learning
-  #### * *Support Vector Machine (SVM)*
-  #### * *Decision Trees*
+  #### * *Support Vector Machine (SVM)* 
+  #### * *Decision Trees* 
   #### * *Random Forests*
   #### * *Linear Regression*
 ### V. Results
@@ -18,13 +37,14 @@
 ### VII. Distribution of Work
 ### VIII. References
 
-## Introduction - Aakash
+
+## Introduction - Aakash <a name="introduction"></a>
 
 Massive census datasets can reveal interesting aspects of the human condition and trends based on pure statistical data. Many previous studies have been conducted using these statistics. Interesting analyses to note include the definition of “rural” in the U.S. and business performance between female-owned and male-owned businesses [1, 2]. We are utilizing the UCI Machine Learning Repository’s Census Income Data Set [3] for further analysis of career development and what is a best-suited job based on statistical analysis of many attributes. We propose the development of optimized machine learning algorithms to predict and enhance users’ job selections to provide people with a variety of choices to eliminate growing career selection uncertainty. This project is driven by the economics concept of comparative advantage. Said to be the most important concept by Dr. Emily Oster of Brown, comparative advantage is the ability of an individual or group to carry out a particular economic activity (such as making a specific product) more efficiently than another activity.
 
-## Data
+## Data <a name="data"></a>
 
-### Description - Done
+### Description - Done <a name="description"></a>
 
 Our source, as mentioned above, is the UCI Machine Learning Repository's Census Income Data Set. There are a total of 48,842 datapoints, with 15 continuous and categorical features associated with each datapoint:
 
@@ -46,7 +66,7 @@ Our source, as mentioned above, is the UCI Machine Learning Repository's Census 
 
 The original purpose of this dataset was to predict the 15th feature, which is listed as part of our dataset for our project.
 
-### Pre-Processing 
+### Pre-Processing <a name="pre-processing"></a>
 
 #### Irrelevant Features - Sharjeel
 
@@ -72,9 +92,9 @@ is converted to
 
 We standardized the dataset by using scikit-learn's StandardScaler, which removes the mean and scales the data to unit variance.
 
-## Unsupervised Learning -Done
+## Unsupervised Learning -Done <a name="unsupervised-learning"></a>
 
-### DBSCAN
+### DBSCAN <a name="dbscan"></a>
 
 First, after we pre-process our data with the exception of one-hot encoding (to avoid mixing categorical and continuous features together), we run DBSCAN on the data to identify and remove outliers, increasing the purity of our dataset [4]. We use MinPts = 20. To find Eps, we use the elbow method where we plotted the 20th-nearest-neighbor distance for each datapoint. 
 
@@ -84,9 +104,9 @@ With this graphical method, we identified Eps = 1.571. With these two parameters
 
 ![Density Plot.](/plots/dbscan_results.png)
 
-### GMM
+### GMM <a name="gmm"></a>
 
-Upon removing the outliers from the dataset, we run a second clustering algorithm, GMM (Gaussian Mixture Models), to group datapoints into clusters that we can represent with univariate Gaussian distributions. We do this particular algorithm to group similar points together in order to fill in the unspecified labels in each categorical feature based on a majority vote of intracluster points. 
+Upon removing the outliers from the dataset, we run a second clustering algorithm, GMM (Gaussian Mixture Models), to group datapoints into clusters that we can represent with univariate Gaussian distributions. We do this particular algorithm to group similar points together in order to gap-fill the unspecified labels in each categorical feature based on a majority vote of intracluster points. In literature, more complex methods are implemented for this very task, but for this project, a majority vote suffices [5].
 
 To select how many components we would like to cluster our data into, we perform GMM from 1 component to 21 components, calculate the BIC (Bayesian Information Criterion) value for each of the models, and choose the one with the lowest BIC. In this case, we chose n_components = 19.
 
@@ -98,18 +118,12 @@ For supervised learning, we removed a single feature from the data and used it a
 
 ### SVM
 
-Support Vector Machine is a form of supervised learning that classifies linearly separable data. Through methods such as one against all [5] and using kernels, we are able to perform multi-classification on data that is not linearly separable. In order to classify the census data, a third degree polynomial kernel was chosen because the data is not linearly separable and because it is less computationally expensive then other kernels. 
+Support Vector Machine is a form of supervised learning that classifies linearly separable data. Through methods such as one against all [6] and using kernels, we are able to perform multi-classification on data that is not linearly separable. In order to classify the census data, a third degree polynomial kernel was chosen because the data is not linearly separable and because it is less computationally expensive then other kernels. 
 
 In order to get the best performance out of our classifier, we must tune the parameters C and gamma. In SVM, C is the regularization parameter which determines the size of the margin between classifications. If C is large then it will create a smaller margin and increase classification accuracy. A smaller C will create a larger margin and increase computation speed but may misclassify more. Gamma is the kernel coefficient and it determines how well the classification fits the data. The high value for gamma will mean overfitting, while a low value will result in a gamma that is not representative of the training data. 
 
 A grid search method was used in order to choose appropriate parameters for the classifier. In this method, possible C and gamma terms were specified and were systematically checked to determine the accuracy that they produced. In the end, the parameters that produced the best accuracy while being computationally efficient was C = 1 gamma = 0.054. 
 
-| Accuracy (%) | gamma = 0.001      | 0.01      | 0.025   | 0.054 
-| -------------- |:------:| -----:| ---:| ---:| ---:| 
-|C = 0.001   | 40.48    |   40.48| 40.48| 61.5| 43.88| 
-|C = 0.01    | 40.48    |   40.48| 43.85| 61.7| 62.08| 
-|C = 0.1    |  40.48   |   41.46| 62.07| 63.3| 68.97|  
-|C = 1    | 40.48   |   59.2| 68.96| 66.2| 69.78|
 
 ### Decision Tree
 
@@ -162,16 +176,12 @@ For regression, there are three hyperparameters: polynomial degree, alpha, and m
 ![HyperParameter Tuning for Max_iterations.](/plots/Linear_HyperParameter_Max_iterations.png)
 
 ## Results
-While we proposed to use occupation. We found that the accuracy wasn't especially high and were curious to explore other classes that we thought would be interesting to predict.
 
-### Education
+### Sex
 
 ### Occupation
 
 ### Relationship
-
-### Sex
-
 
 ### Workclass
 
@@ -196,5 +206,7 @@ It appears that both SVM and random forest had some succes in correcly classifyi
 
 [4] A. Ajiboye and al., “Anomaly Detection in Dataset for Improved Model Accuracy Using DBSCAN Clustering Algorithm,” African Journal of Computing and ICTs, vol. 8, pp. 39–46, 2015.
 
-[5] Ben Aisen. "A Comparison of Multiclass SVM Methods", Dec 15, 2006. https://courses.media.mit.edu/2006fall/mas622j/Projects/aisen-project/
+[5] Melchior, P. and Goulding, A. D. (2018) Filling the gaps: Gaussian mixture models from noisy, truncated or incomplete samples. Astronomy and Computing, 25, 183–194.
+
+[6] Ben Aisen. "A Comparison of Multiclass SVM Methods", Dec 15, 2006. https://courses.media.mit.edu/2006fall/mas622j/Projects/aisen-project/
 
