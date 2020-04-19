@@ -161,7 +161,7 @@ There are several key hyperparameters that influence performance in addition to 
 |**#oT = 100**    | **MD = 10**   |   45.1| 62.6| 69.3| 70.5| 71.4| 70.7| 71.4| 72.3| 72.4|
 |#oT = 1000   | MD = 10   |   45.0| 62.8| 69.3| 70.8| 71.2| 70.7| 71.6| 72.4| 72.5|
 
-After testing out different hyperparameters, across algorithms, we found an elbow point to occur around using 8 principle compoents. From here we selected the number of trees (#oT) and a max depth of 100. While increasing both these numbers increase the accuracy, it is at the cost of computation time on the training side. 
+After testing out different hyperparameters, across algorithms, we found an elbow point to occur around using 8 principle compoents. From here we selected the number of trees (#oT) to be 100 and a max depth of 10. While increasing both these numbers increase the accuracy, it is at the cost of computation time on the training side. 
 
 
 ### Linear Regression <a name="linearregression"></a>
