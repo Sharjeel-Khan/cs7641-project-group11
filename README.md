@@ -106,7 +106,7 @@ To select how many components we would like to cluster our data into, we perform
 
 ## Supervised Learning <a name="supervised-learning"></a>
 
-For supervised learning, we removed a single feature from the data and used it as a label. Then we used four different algorithms (SVM, Decision Trees, Random Forest, and Linear Regression) to see how well the algorithms could classify data for a specific label. The labels that we looked at were relationship, workclass, sex, and education.
+For supervised learning, we removed a single feature from the data and used it as a label. Then we used four different algorithms (SVM, Decision Trees, Random Forest, and Linear Regression) to see how well the algorithms could classify data for a specific label. The labels that we looked at were relationship, workclass, sex, occupation and education.
 
 ### SVM <a name="svm"></a>
 
