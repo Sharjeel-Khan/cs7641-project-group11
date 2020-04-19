@@ -1,4 +1,4 @@
-# Career Optimization Utilizing Census Data
+# Life Predictor Utilizing Census Data
 
 ## Project Outline
 1. [Introduction](#introduction)
