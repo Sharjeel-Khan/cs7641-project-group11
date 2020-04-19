@@ -188,6 +188,7 @@ The trends in the PCA analysis indicate that, generally, random forests perform 
 
 ![Occupation Results.](/plots/all_Occupation.JPG)
 
+For occupation, the trends continue with random forests performing the best again. However,  the four classifiers have a lower accuracy compared to other features coming with a maximum accuracy of 35%. Moreover, the confusion matrix indicates that most of the data was classified as ‘Craft-repair’ that could be due to most of the datapoints being ‘Craft-repair’.
 
 ### Relationship <a name="relationship"></a>
 
@@ -207,6 +208,8 @@ It appears that all the algorithms had some succes in correcly classifying the d
 ### Education <a name="education"></a>
 
 ![Education Results.](/plots/all_Education.JPG)
+
+Once again, the trends continue with random forests performing the best again. Random Forests have plateaus after 8 components with an accuracy of 42% while the other classifiers range between 38% - 40%. This makes education the second lowest feature to classify based on the census data. Based on the confusion matrix, the low accuracy can be explained by the skewness of the data. The data has 10490 ‘HS-grads’ that Is twice the second most label that is 7283 ‘some-college’.  We can see that ‘some-college’ is predicted correctly but the other labels are predicted as ‘HS-grads’ causing the low accuracy.
 
 ## Conclusion <a name="conclusion"></a>
 
