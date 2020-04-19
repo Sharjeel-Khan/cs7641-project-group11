@@ -26,7 +26,7 @@
 
 ## Introduction - Aakash <a name="introduction"></a>
 
-Massive census datasets can reveal interesting aspects of the human condition and trends based on pure statistical data. Many previous studies have been conducted using these statistics. Interesting analyses to note include the definition of “rural” in the U.S. and business performance between female-owned and male-owned businesses [1, 2]. We are utilizing the UCI Machine Learning Repository’s Census Income Data Set [3] for further analysis of career development and what is a best-suited job based on statistical analysis of many attributes. We propose the development of optimized machine learning algorithms to predict and enhance users’ job selections to provide people with a variety of choices to eliminate growing career selection uncertainty. This project is driven by the economics concept of comparative advantage. Said to be the most important concept by Dr. Emily Oster of Brown, comparative advantage is the ability of an individual or group to carry out a particular economic activity (such as making a specific product) more efficiently than another activity.
+Massive census datasets can reveal interesting aspects of the human condition and trends based on pure statistical data. Many previous studies have been conducted using these statistics. Interesting analyses to note include the definition of “rural” in the U.S. and business performance between female-owned and male-owned businesses [1, 2]. We are utilizing the UCI Machine Learning Repository’s Census Income Data Set [3] for further analysis of career development and what is a best-suited job based on statistical analysis of many attributes. We propose the development of optimized machine learning algorithms to predict and enhance users’ job selections to provide people with a variety of choices to eliminate growing career selection uncertainty. While this was the main objective of our proposed project, we expanded to be able to predict multiple catagorical labels across our data set including: education, sex, relationship, workclass and occupation. This project is driven by the economics concept of comparative advantage. Said to be the most important concept by Dr. Emily Oster of Brown, comparative advantage is the ability of an individual or group to carry out a particular economic activity (such as making a specific product) more efficiently than another activity. While we were orginally primarily interested in occupation prediction and if there were secondary occupation's people may prefer over their optimal, ranked preferences were difficult to acertain. We pivoted to focus on documenting an thourough analysis of of mutiple approcess across mutliple labels.
 
 ## Data <a name="data"></a>
 
@@ -54,11 +54,11 @@ The original purpose of this dataset was to predict the 15th feature, which is l
 
 ### Pre-Processing <a name="pre-processing"></a>
 
-#### Irrelevant Features - Done
+#### Irrelevant Features
 
 The fnlwgt feature is the number of people that the census believes the datapoint represents based on the total population. We thought the feature does not help predict other features because different datapoints can represent the same number of people so we dropped the fnlwgt feature. 
 
-#### One-Hot Encoding - Done
+#### One-Hot Encoding
 
 The dataset is comprised of both numerical and categorical data. For a few classifiers, it is hard to use categorical data so we perform one-hot encoding. One-Hot encoding converts every categorical feature into new feature comprised of the values giving each new feature either 0 or 1. 
 
@@ -74,7 +74,7 @@ is converted to
 |-----------------------|---------------------|------------------------|-------------------|------------------------|----------------------------|---------------------|-----------------------|
 | 0                     | 0                   | 0                      | 0                 | 0                      | 0                          | 1                   | 0                     |
 
-#### Standardization - Done
+#### Standardization
 
 We standardized the dataset by using scikit-learn's StandardScaler, which removes the mean and scales the data to unit variance.
 
@@ -84,7 +84,7 @@ A preliminary exploration of this massive dataset was required. All variables we
 
 ![Prelim Data plot.](/plots/prelim_data.png)
 
-## Unsupervised Learning -Done <a name="unsupervised-learning"></a>
+## Unsupervised Learning <a name="unsupervised-learning"></a>
 
 ### DBSCAN <a name="dbscan"></a>
 
@@ -141,7 +141,7 @@ Iterating through these parameters together, we found that the highest accuracy 
 
 
 
-### Random Forest - Highlight the best line Aakash <a name="randomforests"></a>
+### Random Forest <a name="randomforests"></a>
 Random Forests are an extension of Decision Trees. Decision trees will not make mistakes with their training data and may overfit (assuming unlimited depth). The model will not only learn the training set but also the noise of the system itself. With unlimited depth, ther is unlimited flexibility so the tree can keep growing until it has exactly one leaf node for every single observation, perfectly classifying them all. The solution to this it to limit the depth which reduces variance but increases bias. An alternative is to combine many decision trees into a single ensemble model known as a Random Forest. For each tree there is a random sample taken to create it. 
 
 Typically samples are drawn with replacement, known as bootstrapping. With this method, each tree might have high variance with respect to a specific set of the training data but overall the entire forest will have lower variance with the cost of increasing bias. Once trained the model can average the predictions of each tree which is a method known as bagging (bootstrap aggregating). There is also a method of voting as an alternative.
@@ -151,14 +151,14 @@ Overall, Random Forests are hard to beat in terms of performance, can perform re
 
 There are several key hyperparameters that influence performance in addition to those already discussed (max depth, max features). The key ones include the max depth, min_impurity split, bootstrap, min samples split, etc. While most of these values are held at their default values, we tuned specifically the number of trees and depth of trees to give better performance while balancing computation time. Finally, to increase runtimes scikit can edit the number of processors you're using to run the system (n_jobs = -1, using all parallelization). The variables were parametrized and a limited number are presented. Higher numbers were discarded from the search as their computation time was too high.
 
-| Accuracy (%) | PCA      |1      |2    |4    |8    |10   |15   |20   |25   |30
+| Accuracy (%) |  PCA # ->     |1      |2    |4    |**8**    |10   |15   |20   |25   |30
 | -------------- |:------:| -----:| ---:| ---:| ---:| ---:| ---:| ---:| ---:| ---:|
 |#oT = 50     | MD = 2    |   43.5| 54.5| 61.5| 59.2| 60.4| 55.1| 55.0| 55.5| 55.4|
 |#oT = 100    | MD = 2    |   43.6| 55.5| 61.7| 59.0| 58.8| 55.5| 56.0| 56.9| 56.3|
 |#oT = 100    | MD = 4    |   44.0| 59.0| 63.3| 64.1| 64.2| 63.4| 63.4| 63.5| 63.0| 
 |#oT = 100    | MD = 6    |   45.1| 60.8| 66.2| 66.3| 67.2| 66.1| 66.4| 67.1| 66.7|
 |#oT = 100    | MD = 8    |   44.9| 62.0| 68.0| 68.8| 69.3| 68.7| 69.4| 70.3| 70.2|
-|#oT = 100    | MD = 10   |   45.1| 62.6| 69.3| 70.5| 71.4| 70.7| 71.4| 72.3| 72.4|
+|**#oT = 100**    | **MD = 10**   |   45.1| 62.6| 69.3| 70.5| 71.4| 70.7| 71.4| 72.3| 72.4|
 |#oT = 1000   | MD = 10   |   45.0| 62.8| 69.3| 70.8| 71.2| 70.7| 71.6| 72.4| 72.5|
 
 After testing out different hyperparameters, across algorithms, we found an elbow point to occur around using 8 principle compoents. From here we selected the number of trees (#oT) and a max depth of 100. While increasing both these numbers increase the accuracy, it is at the cost of computation time on the training side. 
