@@ -32,7 +32,7 @@ Massive census datasets can reveal interesting aspects of the human condition an
 
 ### Description  <a name="description"></a>
 
-Our source, as mentioned above, is the UCI Machine Learning Repository's Census Income Data Set. There are a total of 48,842 datapoints, with 15 continuous and categorical features associated with each datapoint:
+Our source, as mentioned above, is the UCI Machine Learning Repository's Census Income Data Set. There are a total of 32,561 datapoints, with 15 continuous and categorical features associated with each datapoint:
 
 1. age
 2. workclass
@@ -170,7 +170,7 @@ Regression is used to estimate the relationship between the training variables a
 
 For regression, there are two hyperparameters: alpha, and maximum iterations. Ridge and Lasso regression trains use coordinate descent and the hyperparameters define how long to train the regression model. From the graphs below, we figured out that the dataset works best for alpha=0.1 and max-iterations=2000.
 
-Also, most of our predicted features are categorical features. Compared to the above classifiers, regression does not work if we just map our categorical feature onto numbers so we decided to do a multi-class linear regression. Multi-class linear regression means encoding the categorical feature using one-hot encoding then creating a linear regression **$l_i(x)$** for each one-hot encoding feature. When it comes to predicting for a datapoint **x**, we just maximize over all the linear regression on the datapoint **$max_{i}  l_i(x)$** and output the class that had the maximum value given by their linear regression.
+Also, most of our predicted features are categorical features. Compared to the above classifiers, regression does not work if we just map our categorical feature onto numbers so we decided to do a multi-class linear regression. Multi-class linear regression means encoding the categorical feature using one-hot encoding then creating a linear regression **Li(x)** for each one-hot encoding feature. When it comes to predicting for a datapoint **x**, we just maximize over all the linear regression on the datapoint **max_{i}  Li(x)** and output the class that had the maximum value given by their linear regression.
 
 ![Regression HyperParameter Tuning.](/plots/all_regression.JPG)
 
