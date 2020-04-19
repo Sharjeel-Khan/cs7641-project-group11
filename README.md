@@ -215,8 +215,6 @@ Once again, the trends continue with random forests performing the best again. R
 
 In this project, we use supervised and unsupervised learning methods to perform optimized machine learning classification of census data from 1994. With unsupervised learning, we were able to detect outliers in our data using DBSCAN and gap-fill unspecificied labels using GMM. Then, with supervised learning, we built tuned models of SVMs, Decision Trees, Random Forests, and Linear Regression. We performed analyses on workclass, sex, education, occupation, and relationship features. Our results concluded that 8 was the optimal choice of number of PCA components. Additionally, we found that our tuned Random Forest performed the best across all features. Using these findings, we can further drive comparative testing and provide predictions on information of persons living in the United States in 1994.
 
-## Distribution of Work <a name="distribution"></a>
-
 ## References - Everyone <a name="references"></a>
 
 [1] Ratcliffe, Michael, et al. "Defining rural at the US Census Bureau." American community survey and geography brief  (2016): 8.
