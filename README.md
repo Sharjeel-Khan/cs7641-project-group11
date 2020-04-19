@@ -209,7 +209,7 @@ It appears that all the algorithms had some succes in correcly classifying the d
 
 ![Education Results.](/plots/all_Education.JPG)
 
-Once again, the trends continue with random forests performing the best again. Random Forests have plateaus after 8 components with an accuracy of 42% while the other classifiers range between 38% - 40%. This makes education the second lowest feature to classify based on the census data. Based on the confusion matrix, the low accuracy can be explained by the skewness of the data. The data has 10490 ‘HS-grads’ that Is twice the second most label that is 7283 ‘some-college’.  We can see that ‘some-college’ is predicted correctly but the other labels are predicted as ‘HS-grads’ causing the low accuracy.
+Once again, the trends continue with random forests performing the best again. Random Forests have plateaus after 8 components with an accuracy of 42% while the other classifiers range between 38% - 40%. This makes education the second lowest feature to classify based on the census data. Based on the confusion matrix, the low accuracy can be explained by the skewness of the data. The data has 10490 ‘HS-grads’ that is 3000 more than the second most label that is 7283 ‘some-college’.  We can see that ‘some-college’ is predicted correctly but the other labels are predicted as ‘HS-grads’ causing the low accuracy.
 
 ## Conclusion <a name="conclusion"></a>
 
