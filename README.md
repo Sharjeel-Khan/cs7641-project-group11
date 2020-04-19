@@ -129,7 +129,7 @@ A grid search method was used in order to choose appropriate parameters for the 
 
 Decision trees are a type of decision analysis that utilizes a tree-like model comprised of nodes and leaves, where the node represents the condition that will split the outcome and the leaves represent the outcomes. They are commonly used in machine learning techniques, especially for data mining, because of their robustness for missing data, quick computation time, and efficient avoidance of noise. Its branching capabilities cleanly separate complex, nonlinear data into linear boundaries. 
 
-While the branches of the tree can become quite computationally expensive, there are a number of parameters that can be tuned to maintain the efficiency and accuracy of decision trees. Parameter tuning includes maximum depth, the minimum number of samples required to split nodes, and quality measurement of the split. The maximum depth to search in the tree as the deeper the tree, the more splits it has.
+While the branches of the tree can become quite computationally expensive, there are a number of parameters that can be tuned to maintain the efficiency and accuracy of decision trees. Parameter tuning includes maximum depth, the minimum number of samples required to split nodes, and quality measurement of the split. The maximum depth to search in the tree as the deeper the tree, the more splits it has [7].
 
 A decision tree classifier was utilized and trained on this dataset. We tuned using the maximum depth parameter and minimum of sample splits parameter discussed above. Maximum depth was examined from [1, 30] and minimum of sample splits was ranged from [0.0001, 1.0]. Iterating through these parameters separately, the following results were obtained.
 
@@ -142,12 +142,12 @@ Iterating through these parameters together, we found that the highest accuracy 
 
 
 ### Random Forest <a name="randomforests"></a>
-Random Forests are an extension of Decision Trees. Decision trees will not make mistakes with their training data and may overfit (assuming unlimited depth). The model will not only learn the training set but also the noise of the system itself. With unlimited depth, ther is unlimited flexibility so the tree can keep growing until it has exactly one leaf node for every single observation, perfectly classifying them all. The solution to this it to limit the depth which reduces variance but increases bias. An alternative is to combine many decision trees into a single ensemble model known as a Random Forest. For each tree there is a random sample taken to create it. 
+Random Forests are an extension of Decision Trees. Decision trees will not make mistakes with their training data and may overfit (assuming unlimited depth). The model will not only learn the training set but also the noise of the system itself. With unlimited depth, ther is unlimited flexibility so the tree can keep growing until it has exactly one leaf node for every single observation, perfectly classifying them all. The solution to this it to limit the depth which reduces variance but increases bias. An alternative is to combine many decision trees into a single ensemble model known as a Random Forest. For each tree there is a random sample taken to create it [8]. 
 
-Typically samples are drawn with replacement, known as bootstrapping. With this method, each tree might have high variance with respect to a specific set of the training data but overall the entire forest will have lower variance with the cost of increasing bias. Once trained the model can average the predictions of each tree which is a method known as bagging (bootstrap aggregating). There is also a method of voting as an alternative.
+Typically samples are drawn with replacement, known as bootstrapping. With this method, each tree might have high variance with respect to a specific set of the training data but overall the entire forest will have lower variance with the cost of increasing bias. Once trained the model can average the predictions of each tree which is a method known as bagging (bootstrap aggregating). There is also a method of voting as an alternative [9].
 
 When splitting nodes, a random subset of features is selected. This is conveniently set to the square root of the number of features (scikit learn default is the same). In regression tasks it is also common to consider all features at all nodes. 
-Overall, Random Forests are hard to beat in terms of performance, can perform regression and classification tasks, adn are often (depending on implementation) are quick to train. However, the downsides are that they take more time on the prediction side and are sometimes slow in real time implementation. For data including categorical variables with different number of levels (such as the data set we selected), random forests are biased in favor of those attributes with more levels. Could possibly translate the categorical datas into one-hot form. Solutions to this issue are an active area of research.
+Overall, Random Forests are hard to beat in terms of performance, can perform regression and classification tasks, adn are often (depending on implementation) are quick to train. However, the downsides are that they take more time on the prediction side and are sometimes slow in real time implementation. For data including categorical variables with different number of levels (such as the data set we selected), random forests are biased in favor of those attributes with more levels. Could possibly translate the categorical datas into one-hot form. Solutions to this issue are an active area of research [10].
 
 There are several key hyperparameters that influence performance in addition to those already discussed (max depth, max features). The key ones include the max depth, min_impurity split, bootstrap, min samples split, etc. While most of these values are held at their default values, we tuned specifically the number of trees and depth of trees to give better performance while balancing computation time. Finally, to increase runtimes scikit can edit the number of processors you're using to run the system (n_jobs = -1, using all parallelization). The variables were parametrized and a limited number are presented. Higher numbers were discarded from the search as their computation time was too high.
 
@@ -166,7 +166,7 @@ After testing out different hyperparameters, across algorithms, we found an elbo
 
 ### Linear Regression <a name="linearregression"></a>
 
-Regression is used to estimate the relationship between the training variables and the outcome. It can also be used for predicting the value based on the training set. We decided to use Linear Regression to figure out if we can build a linear function to help predict the different features. Due to the overfitting problem of Linear Regression, we also try Ridge[10] and Lasso Regression [11] to regularize the linear function so it does not overfit the training data. However, Lasso ends up always having lower accuracy while Ridge has same accuracy as Linear so we only need Linear for our final results.
+Regression is used to estimate the relationship between the training variables and the outcome. It can also be used for predicting the value based on the training set. We decided to use Linear Regression to figure out if we can build a linear function to help predict the different features. Due to the overfitting problem of Linear Regression, we also try Ridge[11] and Lasso Regression [12] to regularize the linear function so it does not overfit the training data. However, Lasso ends up always having lower accuracy while Ridge has same accuracy as Linear so we only need Linear for our final results.
 
 For regression, there are two hyperparameters: alpha, and maximum iterations. Ridge and Lasso regression trains use coordinate descent and the hyperparameters define how long to train the regression model. From the graphs below, we figured out that the dataset works best for alpha=0.1 and max-iterations=2000.
 
@@ -193,7 +193,7 @@ The trends in the PCA analysis indicate that, generally, random forests perform 
 
 ![Relationship Results.](/plots/all_Relationship.JPG)
 
-
+This data contained an appropriate spread of different relationship statuses for this specific label. The accuracy of classifying relationship increases as the number of PCA component increases. However, a plateau is noticeable at around a PCA value of 8. For time-efficiency, a PCA value of 8 can be considered the best for this label. Overall, each algorithm performs well in classifying relationship except for linear regression. The best algorithm at a PCA component of 8 is Random Forests, achieving an accuracy of about 73%.
 
 ### Workclass <a name="workclass"></a>
 
@@ -228,12 +228,14 @@ In this project, we use supervised and unsupervised learning methods to ______. 
 
 [6] Ben Aisen. "A Comparison of Multiclass SVM Methods", Dec 15, 2006. https://courses.media.mit.edu/2006fall/mas622j/Projects/aisen-project/
 
-[7] A. Painsky and S. Rosset, "Cross-Validated Variable Selection in Tree-Based Methods Improves Predictive Performance," in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 39, no. 11, pp. 2142-2153, 1 Nov. 2017.
+[7] Mantovani, Rafael G., et al. "Hyper-parameter tuning of a decision tree induction algorithm." 2016 5th Brazilian Conference on Intelligent Systems (BRACIS). IEEE, 2016.
 
-[8] Strobl, Carolin & Boulesteix, Anne-Laure & Augustin, Thomas. (2007). Unbiased split selection for classification trees based on the Gini Index. Computational Statistics & Data Analysis. 52. 483-501. 10.1016/j.csda.2006.12.030.
+[8] A. Painsky and S. Rosset, "Cross-Validated Variable Selection in Tree-Based Methods Improves Predictive Performance," in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 39, no. 11, pp. 2142-2153, 1 Nov. 2017.
 
-[9] Deng, Houtao & Runger, George & Tuv, Eugene. (2011). Bias of Importance Measures for Multi-valued Attributes and Solutions. Lecture Notes in Computer Science. 6792. 293-300. 10.1007/978-3-642-21738-8_38.
+[9] Strobl, Carolin & Boulesteix, Anne-Laure & Augustin, Thomas. (2007). Unbiased split selection for classification trees based on the Gini Index. Computational Statistics & Data Analysis. 52. 483-501. 10.1016/j.csda.2006.12.030.
 
-[10] Arthur E. Hoerl, Robert W. Kannard & Kent F. Baldwin (1975) Ridge regression:some simulations, Communications in Statistics, 4:2, 105-123, DOI: 10.1080/03610927508827232
+[10] Deng, Houtao & Runger, George & Tuv, Eugene. (2011). Bias of Importance Measures for Multi-valued Attributes and Solutions. Lecture Notes in Computer Science. 6792. 293-300. 10.1007/978-3-642-21738-8_38.
 
-[11] R. Tibshirani (1996). Regression shrinkage and selection via the lasso. Journal of the Royal Statistical Society: Series B (Methodological), 58(1), 267-288.
+[11] Arthur E. Hoerl, Robert W. Kannard & Kent F. Baldwin (1975) Ridge regression:some simulations, Communications in Statistics, 4:2, 105-123, DOI: 10.1080/03610927508827232
+
+[12] R. Tibshirani (1996). Regression shrinkage and selection via the lasso. Journal of the Royal Statistical Society: Series B (Methodological), 58(1), 267-288.
