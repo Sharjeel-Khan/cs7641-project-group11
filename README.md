@@ -166,7 +166,7 @@ After testing out different hyperparameters, across algorithms, we found an elbo
 
 ### Linear Regression <a name="linearregression"></a>
 
-Regression is used to estimate the relationship between the training variables and the outcome. It can also be used for predicting the value based on the training set. We decided to use Linear Regression to figure out if we can build a linear function to help predict the different features. Due to the overfitting problem of Linear Regression, we also try Ridge and Lasso Regression to regularize the linear function so it does not overfit the training data. However, Lasso ends up always having lower accuracy while Ridge has same accuracy as Linear so we only need Linear for our final results.
+Regression is used to estimate the relationship between the training variables and the outcome. It can also be used for predicting the value based on the training set. We decided to use Linear Regression to figure out if we can build a linear function to help predict the different features. Due to the overfitting problem of Linear Regression, we also try Ridge[10] and Lasso Regression [11] to regularize the linear function so it does not overfit the training data. However, Lasso ends up always having lower accuracy while Ridge has same accuracy as Linear so we only need Linear for our final results.
 
 For regression, there are two hyperparameters: alpha, and maximum iterations. Ridge and Lasso regression trains use coordinate descent and the hyperparameters define how long to train the regression model. From the graphs below, we figured out that the dataset works best for alpha=0.1 and max-iterations=2000.
 
@@ -234,4 +234,6 @@ In this project, we use supervised and unsupervised learning methods to ______. 
 
 [9] Deng, Houtao & Runger, George & Tuv, Eugene. (2011). Bias of Importance Measures for Multi-valued Attributes and Solutions. Lecture Notes in Computer Science. 6792. 293-300. 10.1007/978-3-642-21738-8_38.
 
+[10] Arthur E. Hoerl, Robert W. Kannard & Kent F. Baldwin (1975) Ridge regression:some simulations, Communications in Statistics, 4:2, 105-123, DOI: 10.1080/03610927508827232
 
+[11] R. Tibshirani (1996). Regression shrinkage and selection via the lasso. Journal of the Royal Statistical Society: Series B (Methodological), 58(1), 267-288.
