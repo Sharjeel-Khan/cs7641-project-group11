@@ -106,7 +106,7 @@ To select how many components we would like to cluster our data into, we perform
 
 ## Supervised Learning <a name="supervised-learning"></a>
 
-For supervised learning, we removed a single feature from the data and used it as a label. Then we used four different algorithms (SVM, Decision Trees, Random Forest, and Linear Regression) to see how well the algorithms could classify data for a specific label. The labels that we looked at were relationship, workclass, sex, occupation and education.
+For supervised learning, we removed a single feature from the data and used it as a label. Then we used four different algorithms (SVM, Decision Trees, Random Forest, and Linear Regression) to see how well the algorithms could classify data for a specific label. The labels that we looked at were relationship, workclass, sex, occupation, and education.
 
 ### SVM <a name="svm"></a>
 
@@ -181,7 +181,7 @@ Below are the results of PCA analysis of each of the supervised approaches previ
 ### Sex <a name="sex"></a>
 
 ![Sex Results.](/plots/all_Sex.JPG)
-The trends in the PCA analysis indicate that, generally, random forests perform the best but decision trees catch up given enough principle components. This difference is likely due to drawbacks of in terms of teh bias-variance trade off previously discussed. Moreover, the confusion matrix indicates that there is a high chance of correctly classifying male's as male's (normalized value = 0.87) but a bit lower on correctly classifying female's (0.60). Additionally, there are a greater number of females incorrectly classified as males (0.40) than males classified as females (0.13). 
+The trends in the PCA analysis indicate that, generally, random forests perform the best but SVM catchs up given enough principle components. Overall, all four classifiers have above 80% accuracy for 20 pca components. Moreover, the confusion matrix indicates that there is a high chance of correctly classifying male's as male's (normalized value = 0.87) but a bit lower on correctly classifying female's (0.60). Additionally, there are a greater number of females incorrectly classified as males (0.40) than males classified as females (0.13).
 
 
 ### Occupation <a name="occupation"></a>
